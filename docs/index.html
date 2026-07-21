@@ -132,8 +132,16 @@
 
 	<style>body { background: url('./assets/bg-CoKJw8hh.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover;}</style>
 
-
-	<script src="./index.js" defer></script>
+	<script>
+  // Код выполнится сразу, как только браузер дойдет до конца HTML
+  const preloader = document.getElementById('loader');
+  if (preloader) {
+      preloader.style.opacity = '0';
+      setTimeout(() => {
+          preloader.style.display = 'none';
+      }, 300);
+  }
+	</script>
 
 </body>
 </html>
