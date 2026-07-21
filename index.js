@@ -1,8 +1,11 @@
-window.addEventListener('load', () => {
-    // Находим блок загрузки (проверь, как он называется у тебя в HTML)
-    const preloader = document.querySelector('.loader') || document.getElementById('preloader') || document.querySelector('[class*="load"]');
+const preloader = document.getElementById('loader');
 
-    if (preloader) {
-        preloader.style.display = 'none'; // Просто скрываем его
-    }
-});
+if (preloader) {
+    // Делаем прелоадер невидимым
+    preloader.style.opacity = '0';
+
+    // Полностью убираем его через 300мс, чтобы сработал плавный CSS-переход (если он есть)
+    setTimeout(() => {
+        preloader.style.display = 'none';
+    }, 300);
+}
